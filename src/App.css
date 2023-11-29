@@ -1,4 +1,4 @@
-.card {
+.card, .trayCard, .trayOverlayCard {
     box-sizing: content-box;
     padding: 10px;
     border-radius: 3px;
@@ -17,4 +17,10 @@
     border-width: 1px;
     border-style: solid;
     background-color:snow;
+  }
+
+  .tray {
+    display: flex;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
   }

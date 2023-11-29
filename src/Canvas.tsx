@@ -1,4 +1,4 @@
-import { DndContext } from "@dnd-kit/core";
+import { DndContext, useDroppable } from "@dnd-kit/core";
 import { DragEndEvent } from "@dnd-kit/core/dist/types";
 import { Card } from "./App";
 import { Draggable } from "./Draggable";
@@ -29,6 +29,10 @@ export const Canvas = ({
     );
   };
 
+  const { setNodeRef } = useDroppable({
+    id: "canvas",
+  });
+
   return (
     <div
       className="canvas"
@@ -36,6 +40,7 @@ export const Canvas = ({
         position: "relative",
         height: "300px",
       }}
+      ref={setNodeRef}
     >
       <DndContext onDragEnd={saveDragEndPosition}>
         {cards.map((card) => (
